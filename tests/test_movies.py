@@ -7,7 +7,7 @@ from app.dao.db import Base
 from app.main import app
 from app.api.movies import get_db
 
-# Use an in-memory SQLite database for tests
+
 SQLALCHEMY_DATABASE_URL = "sqlite+pysqlite:///:memory:"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}, future=True)
@@ -39,7 +39,7 @@ def test_create_movie():
     assert "id" in data
 
 def test_list_movies_pagination():
-    # Ensure at least 2 movies exist
+   
     for i in range(2):
         client.post("/movies", json={"title": f"Movie {i}", "rating": 7})
     r = client.get("/movies?limit=2&offset=0")
