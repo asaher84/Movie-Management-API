@@ -3,7 +3,7 @@ import os
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
-# Load environment variables from .env if present
+# Load environment variables from .env 
 load_dotenv()
 
 class Settings(BaseModel):
