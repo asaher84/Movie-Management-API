@@ -9,7 +9,6 @@ from app.core.config import settings
 
 router = APIRouter(prefix="/movies", tags=["Movies"])
 
-# Ensure DB tables exist at import-time for simplicity
 Base.metadata.create_all(bind=engine)
 
 def get_db():
